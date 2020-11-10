@@ -1,0 +1,27 @@
+stages:
+  preprocess-data:
+    cmd: unzip datasets.zip
+    deps:
+    - datasets.zip
+    outs:
+    - training-data.csv
+    - test-data.csv
+  train:
+    cmd: training/train.sh
+    deps:
+    - training
+    - hyperparams.json
+    - training-data.csv
+    outs:
+    - model.pkl
+    metrics:
+    - metrics.json:
+        cache: false
+  evaluate:
+    cmd: python evaluation/evaluate.py
+    deps:
+    - evaluation
+    - model.pkl
+    - test-data.csv
+    plots:
+    - predictions.csv

@@ -1,0 +1,36 @@
+preprocess-data:
+  cmd: unzip datasets.zip
+  deps:
+  - path: datasets.zip
+    md5: 472f67223beecde17265c9ccdb81e3bd
+  outs:
+  - path: test-data.csv
+    md5: d707d3e8643e0bc52349453964c0628e
+  - path: training-data.csv
+    md5: 053a0ba1d9e3b3946fc19403f891489a
+train:
+  cmd: training/train.sh
+  deps:
+  - path: hyperparams.json
+    md5: 36abe6784feaeb68a5cb78556947b68c
+  - path: training
+    md5: ef583495c20cd4ed546fec2da70be7b1.dir
+  - path: training-data.csv
+    md5: 053a0ba1d9e3b3946fc19403f891489a
+  outs:
+  - path: metrics.json
+    md5: 92a5ee14112ee18d286bf1c9ad844e19
+  - path: model.pkl
+    md5: 36abe6784feaeb68a5cb78556947b68c
+evaluate:
+  cmd: python evaluation/evaluate.py
+  deps:
+  - path: evaluation
+    md5: 4ac4bfe46cfd95bd67ffaf0c759beb60.dir
+  - path: model.pkl
+    md5: 36abe6784feaeb68a5cb78556947b68c
+  - path: test-data.csv
+    md5: d707d3e8643e0bc52349453964c0628e
+  outs:
+  - path: predictions.csv
+    md5: 0534502a467c33d9fba082834fb26127

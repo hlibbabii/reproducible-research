@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DVC Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.10.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.8.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.5.1"></script>
+</head>
+<body>
+    <div id = "plot0"></div>
+<script type = "text/javascript">
+    var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "1",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "1",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    },
+    {
+        "actual": "0",
+        "predicted": "0",
+        "rev": "workspace"
+    }
+]
+    },
+    "title": "",
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "actual",
+            "type": "nominal",
+            "sort": "ascending",
+            "title": "actual"
+        },
+        "y": {
+            "field": "predicted",
+            "type": "nominal",
+            "sort": "ascending",
+            "title": "predicted"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "facet": {
+            "field": "rev",
+            "type": "nominal"
+        }
+    }
+}
+;
+    vegaEmbed('#plot0', spec);
+</script>
+</body>
+</html>
