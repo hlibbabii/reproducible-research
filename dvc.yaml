@@ -6,6 +6,7 @@ stages:
     outs:
     - training-data.csv
     - test-data.csv
+
   train:
     cmd: training/train.sh
     deps:
@@ -17,11 +18,12 @@ stages:
     metrics:
     - metrics.json:
         cache: false
+
   evaluate:
     cmd: python evaluation/evaluate.py
     deps:
     - evaluation
     - model.pkl
     - test-data.csv
-    plots:
+    outs:
     - predictions.csv
